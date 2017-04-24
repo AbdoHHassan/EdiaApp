@@ -1,6 +1,7 @@
 package io.abdo.EdiaApp.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,29 +12,30 @@ import org.springframework.stereotype.Service;
 public class TextService {
 	
 	@Autowired
-	private TextRepo textRepo;
-
-	public List<Text> getAllTexts() {
-		//return topics
+	private TextRepository textRepository;
+	
+	public List<Text> getAllTexts(){
+		//return topics;
 		List<Text> texts = new ArrayList<>();
-		//add elements to topics list
-		textRepo.findAll()
+		//add elements to texts list // expression
+		textRepository.findAll()
 		.forEach(texts::add);
 		return texts;
-		
 	}
-
-	public void addText(Text text) {
-		textRepo.save(text);
-		
+	public Text getText(String id){
+		return textRepository.findOne(id);
 	}
+	
+public void addText(Text text){
+	textRepository.save(text);
+}
 
-	public void deleteText(String id) {
-		// TODO Auto-generated method stub
-		
+
+public void updateText(String id, Text text){
+	textRepository.save(text);
+}
+
+public void deleteText(String id){
+	textRepository.delete(id);
 	}
-
-
-
-
 }

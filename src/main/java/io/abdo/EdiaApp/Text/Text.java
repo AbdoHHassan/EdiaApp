@@ -3,47 +3,46 @@ package io.abdo.EdiaApp.Text;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
-//Entity object which maps to the database, with two data members, their getters and setters.
-
 @Entity
 public class Text {
 	
-	@Id 
-	public static int GlobalId=0;
-	private int id;
+	@Id
+	private String id;
 	private String title;
-	private String text;
+	private String body;
+	
 	
 	public Text(){
-		this.id= GlobalId++;
-	} 
-	
-	public Text(String title,String text){
-		super();
-		this.id = GlobalId++;
-		this.title= title;
-		this.text= text;
+		
+		
 	}
-
+	public Text(String id, String title, String body) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.body = body;
+	}
+	
+	
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public String getText() {
-		return text;
+	public String getBody() {
+		return body;
+	}
+	public void setBody(String body) {
+		this.body = body;
 	}
 
-	public void setText(String text) {
-		this.text = text;
-	};
-	
-	
-	
-	
-	
 }
