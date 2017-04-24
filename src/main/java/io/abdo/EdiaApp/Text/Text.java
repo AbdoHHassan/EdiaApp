@@ -10,15 +10,18 @@ import javax.persistence.Id;
 public class Text {
 	
 	@Id 
+	public static int GlobalId=0;
+	private int id;
 	private String title;
 	private String text;
 	
 	public Text(){
-		
-	}
+		this.id= GlobalId++;
+	} 
 	
 	public Text(String title,String text){
 		super();
+		this.id = GlobalId++;
 		this.title= title;
 		this.text= text;
 	}
