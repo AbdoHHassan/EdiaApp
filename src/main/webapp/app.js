@@ -1,6 +1,6 @@
 angular
     .module('myApp', ['ngResource'])
-    .service('UsersService', function ($log, $resource) {
+    .service('textService', function ($log, $resource) {
         return {
             getAll: function () {
                 var textResource = $resource('texts', {}, {
