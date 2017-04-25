@@ -3,13 +3,13 @@ angular
     .service('UsersService', function ($log, $resource) {
         return {
             getAll: function () {
-                var userResource = $resource('texts', {}, {
+                var textResource = $resource('texts', {}, {
                     query: {method: 'GET', params: {}, isArray: true}
                 });
-                return userResource.query();
+                return textResource.query();
             }
         }
     })
-    .controller('UsersController', function ($scope, $log, UsersService) {
-        $scope.texts = UsersService.getAll();
+    .controller('textController', function ($scope, $log, textService) {
+        $scope.texts = textService.getAll();
     });

@@ -39,11 +39,13 @@
             </div>
             <div class="list-group">
                 <div class="list-group-item">
-                    <div ng-repeat="text in texts | filter:query" class="list-group-item" style="margin-top:16px">
+                    <div ng-repeat="text in texts | orderBy:'added'|filter:query" class="list-group-item" style="margin-top:16px">
                         <div class="row-content">
                             <h4 class="list-group-item-heading" style="font-weight:bold" >{{text.title}}</h4>
 
                             <p class="list-group-item-text"> {{text.body}}
+                            </p>
+                            <p class="list-group-item-text"> {{text.added}}
                             </p>
                         </div>
                     </div>

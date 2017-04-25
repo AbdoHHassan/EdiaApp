@@ -1,5 +1,9 @@
 package io.abdo.EdiaApp.Text;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,6 +14,10 @@ public class Text {
 	private String id;
 	private String title;
 	private String body;
+
+	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+	private long added=timestamp.getTime();;
 	
 	
 	public Text(){
@@ -43,6 +51,12 @@ public class Text {
 	}
 	public void setBody(String body) {
 		this.body = body;
+	}
+	public long getAdded() {
+		return added;
+	}
+	public void setAdded(long added) {
+		this.added = added;
 	}
 
 }
