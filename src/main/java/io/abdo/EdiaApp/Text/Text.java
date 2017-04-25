@@ -14,8 +14,7 @@ public class Text {
 	private String id;
 	private String title;
 	private String body;
-
-	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
 	private long added=timestamp.getTime();;
 	
